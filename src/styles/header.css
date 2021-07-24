@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    height: 8vh;
+    background-color: #4e4e4e;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 14%; 
+   
+}
+.account-header{
+    padding: 5px;
+}
+.dropdown-toggle::after {
+    content: none !important;
+}
+.header-right{
+ align-items: center;
+}
+
