@@ -23,3 +23,25 @@
  align-items: center;
 }
 
+.search{
+    border: 1 1 1 0 px solid grey;
+    border-radius: 10px;
+}
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color: #f8f8f8;
+    height: 1px;
+    margin: 0 !important;
+
+  }
+  .nav-bar{
+      height: 8vh;
+      background-color: #f8f8f8;
+  }
+  input{
+      border:  1px solid grey;
+    outline-color: blue;
+  }
