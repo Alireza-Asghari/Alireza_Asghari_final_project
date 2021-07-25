@@ -7,7 +7,7 @@ import {Dropdown} from 'react-bootstrap'
 import {IoIosArrowDown} from 'react-icons/io'
 import {BiSearch} from 'react-icons/bi'
 import {FiShoppingCart} from 'react-icons/fi'
-import CarouselBar from './carousel'
+
 
 
 
@@ -88,7 +88,7 @@ const Header = () => {
 
 
         </div>
-      <CarouselBar />
+      
       </>
 
 
