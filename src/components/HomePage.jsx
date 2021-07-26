@@ -7,12 +7,12 @@ import MainProduct from './HomePage.MainProduct'
 
 const HomePage = () => {
     return (
-       <>
+  <div className="App">
       <Header/>
       <CarouselBar/>
       <Main/>
       <MainProduct/>
-       </>
+  </div> 
     )
 }
 

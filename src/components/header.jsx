@@ -7,11 +7,14 @@ import {Dropdown} from 'react-bootstrap'
 import {IoIosArrowDown} from 'react-icons/io'
 import {BiSearch} from 'react-icons/bi'
 import {FiShoppingCart} from 'react-icons/fi'
-
-
+import {useHistory} from 'react-router-dom'
 
 
 const Header = () => {
+
+  const history = useHistory();
+
+  
     return (
     <>
         <div className='header '>
@@ -77,10 +80,11 @@ const Header = () => {
                 </Dropdown.Toggle>
 
                  <Dropdown.Menu>
-                     <Dropdown.Item href="#/action-1">پر فروش ترین ها</Dropdown.Item>
-                     <Dropdown.Item href="#/action-2">عناوین جدید</Dropdown.Item>
-                     <Dropdown.Item href="#/action-2">گران ترین ها</Dropdown.Item>
-                     <Dropdown.Item href="#/action-2">ارزان ترین ها</Dropdown.Item>
+                     <Dropdown.Item  onClick={()=> history.push('/BestSelling')} >پر فروش ترین ها</Dropdown.Item>
+                     <Dropdown.Item onClick={()=> history.push('/NewTitle')}>عناوین جدید</Dropdown.Item>
+                     <Dropdown.Item onClick={()=> history.push('/criminal')}>جنایی</Dropdown.Item>
+                     <Dropdown.Item onClick={()=> history.push('/social')}>اجتماعی</Dropdown.Item>
+                     <Dropdown.Item onClick={()=> history.push('/fiction')}>تخیلی</Dropdown.Item>
                  </Dropdown.Menu>
             </Dropdown>
             </div>
