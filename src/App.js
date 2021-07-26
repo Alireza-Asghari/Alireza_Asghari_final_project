@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from './components/header'
-import CarouselBar from './components/carousel'
+import HomePage from './components/HomePage';
+
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <CarouselBar />
+      <HomePage/>
     </div>
   );
 }

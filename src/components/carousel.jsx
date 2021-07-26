@@ -5,8 +5,8 @@ import Carousel from 'react-bootstrap/Carousel'
  const CarouselBar = () => {
      return (
         <>
-            <Carousel>
-  <Carousel.Item>
+ <Carousel>
+   <Carousel.Item>
     <img
       className="d-block w-100"
       src="		https://jangal.com/uploads/slideshow/banner-the-midnight-library.jpg
@@ -14,7 +14,7 @@ import Carousel from 'react-bootstrap/Carousel'
       alt="Third slide"
     />
  
-  </Carousel.Item>
+   </Carousel.Item>
 
   <Carousel.Item>
     <img

@@ -1,0 +1,162 @@
+.card-item{
+    width: 260px;
+    height: 100%;
+   
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+}
+.card-item1{
+    width: 260px;
+    height: 100%;
+    
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+}
+.main-product{
+    height: 50vh;
+}
+.row-product{
+    width: 79% !important;
+    margin: auto !important;
+}
+.row-product{
+        justify-content: center !important;
+        margin-top: 40px !important;
+}
+.negative-s{
+    font-weight: bold;
+}
+.old-price{
+    text-decoration: line-through
+}
+@media only screen and (max-width: 690px){
+    .card-item{
+      margin-bottom: 35px;
+    }
+    .aa{
+        position: absolute;
+        top: 335%;
+    }
+    .card-item1{
+        position: absolute;
+        top: 360%;
+        height: 51%;
+    }
+    .card-item2{
+        position: absolute;
+        top:418% ;
+        height: 51%;
+    }
+    .card-item3{
+        position: absolute;
+        top:478% ;
+        height: 51%;
+    }
+    .card-item4{
+            position: absolute;
+            top:536% ;
+            height: 51%;
+    }
+ 
+}
+
+@media only screen and (min-width: 691px) and (max-width:765px){
+    .kk{
+        margin-top: 360px;
+    }
+    .mm{
+        margin-top: 360px;
+    }
+    .yy{
+        position: absolute;
+        top: 230%;
+       
+        font-size: 14px;
+    }
+    .title-span{
+        font-size: 17px;
+    }
+}
+@media only screen and (min-width: 765px) and (max-width:900px){
+    .kk{
+        margin-top: 360px;
+    }
+    .mm{
+        margin-top: 360px;
+    }
+    .yy{
+        position: absolute;
+        top: 215%;
+       
+        font-size: 14px;
+    }
+    .title-span{
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width:1020px){
+    .kk{
+        margin-top: 360px;
+    }
+    .mm{
+        margin-top: 360px;
+    }
+    .yy{
+        position: absolute;
+        top: 220%;
+       
+        font-size: 14px;
+    }
+    .title-span{
+        font-size: 17px;
+    }
+}
+@media only screen and (min-width: 1021px) and (max-width:1200px){
+    .kk{
+        margin-top: 321px;
+    }
+    .mm{
+        margin-top: 321px;
+    }
+    .yy{
+        position: absolute;
+        top: 215%;
+       
+        font-size: 14px;
+    }
+    .title-span{
+        font-size: 17px;
+    }
+    .qq{
+        margin-top: 321px;
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width:1363px){
+    .kk{
+        margin-top: 300px;
+    }
+    .mm{
+        margin-top: 300px;
+    }
+    .yy{
+        position: absolute;
+        top: 225%;
+       
+        font-size: 18px;
+    }
+    .title-span{
+        font-size: 17px;
+    }
+    .title{
+        align-items: center;
+    }
+    .qq{
+        margin-top: 300px;
+    }
+}
+
+
