@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from './header'
+import Header from './HomePage.header/header'
 import CarouselBar from './carousel'
-import Main from './HomePage.MainTitle'
-import MainProduct from './HomePage.MainProduct'
+import Main from './HomePage.header/HomePage.MainTitle'
+import MainProduct from './HomePage.header/HomePage.MainProduct'
 
 
 const HomePage = () => {
@@ -16,4 +16,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default HomePage;

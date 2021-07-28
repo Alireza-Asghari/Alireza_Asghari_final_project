@@ -5,8 +5,8 @@ const Main = () => {
         <>
         <div className='new-title'>
             <div className='title d-flex '>
-               <span className='title-span'>عناوین جدید</span> 
-               <span className='sen'>کتاب هایی که به تازگی به چاپ رسیده اند</span> 
+               <span className='title-span'>پر فروش ترین ها</span> 
+               <span className='sen'>پر فروش ترین های جنگل</span> 
             </div>
         </div>
      </>

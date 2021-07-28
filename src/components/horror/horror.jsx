@@ -1,22 +1,23 @@
 import React from 'react';
-import {CriminalFakeData} from './criminalFakeData';
+import {HorrorFakeData} from './HorrorFakeData';
 import Header from '../HomePage.header/header';
-import CriminalItems from './Criminal.items';
+import HorrorItems from './HorrorItems';
 
-const Criminal = () => {
+
+const Horror = () => {
     return (
         <>
             <Header/>
-            <h3 className='d-flex pt-4 pr-5'>ژانر جنایی</h3>
+            <h3 className='d-flex pt-4 pr-5'>ژانر ترسناک</h3>
             <div className='main-product'>
                 <div className='row h-100 row-product'>
 
                   {
-                    CriminalFakeData.map((item,index)=>{
+                    HorrorFakeData.map((item,index)=>{
                         return(
                             <>
                                 <div>
-                                   <CriminalItems
+                                   <HorrorItems
                                        key={index}
                                        item={item}
                                    />
@@ -30,7 +31,7 @@ const Criminal = () => {
                 </div> 
             </div>
         </>
-    )    
+    )
 }
 
-export default Criminal;
+export default Horror;

@@ -7,13 +7,11 @@ import {Dropdown} from 'react-bootstrap'
 import {IoIosArrowDown} from 'react-icons/io'
 import {BiSearch} from 'react-icons/bi'
 import {FiShoppingCart} from 'react-icons/fi'
-import {useHistory} from 'react-router-dom'
+
+import Category from '../category'
 
 
 const Header = () => {
-
-  const history = useHistory();
-
   
     return (
     <>
@@ -70,33 +68,8 @@ const Header = () => {
         </div>
         <hr />
 
-        <div className="nav-bar">
-           <div className='row '>
-             <div className=' pr-3 py-1'>
-               <Dropdown  >
-                <Dropdown.Toggle variant="" id="dropdown-basic" style={{ fontSize: `16px`, color:'black',}}>
-                     <span className="account-header">دسته بندی ها</span>
-                     <IoIosArrowDown/>
-                </Dropdown.Toggle>
-
-                 <Dropdown.Menu>
-                     <Dropdown.Item  onClick={()=> history.push('/BestSelling')} >پر فروش ترین ها</Dropdown.Item>
-                     <Dropdown.Item onClick={()=> history.push('/NewTitle')}>عناوین جدید</Dropdown.Item>
-                     <Dropdown.Item onClick={()=> history.push('/criminal')}>جنایی</Dropdown.Item>
-                     <Dropdown.Item onClick={()=> history.push('/social')}>اجتماعی</Dropdown.Item>
-                     <Dropdown.Item onClick={()=> history.push('/fiction')}>تخیلی</Dropdown.Item>
-                 </Dropdown.Menu>
-            </Dropdown>
-            </div>
-           </div> 
-
-
-        </div>
-      
+      <Category/>      
       </>
-
-
-
     )
 }
 
