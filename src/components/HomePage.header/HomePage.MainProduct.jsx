@@ -7,7 +7,6 @@ import axios from 'axios'
 const MainProduct = () => {
 
   const [items,setItems] = React.useState(null)
-
   useEffect(() => {
       axios
       .get("http://localhost:1337/categories")

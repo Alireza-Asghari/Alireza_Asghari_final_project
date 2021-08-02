@@ -27,7 +27,6 @@ useEffect(() => {
     
 }, [])
 
-
     return (
         <>
             <Header />
