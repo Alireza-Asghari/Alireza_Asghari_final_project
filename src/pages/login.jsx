@@ -32,7 +32,7 @@ useEffect(() => {
     .catch(error => {
       // Handle error.
       console.log('An error occurred:', error.response);
-    });
+    }); 
     
 }, [click])
 
