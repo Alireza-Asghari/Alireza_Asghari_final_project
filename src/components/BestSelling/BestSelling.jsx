@@ -1,44 +1,43 @@
-import React from 'react'
+import React, {useEffect,useState} from 'react'
 import Header from '../HomePage.header/header'
 import BestSellingItems from './BestSelling.items'
 import {BestSellingFakeData} from './BestSellingFakeData'
-import ItemContentPage from './itemContentPage'
-import {useHistory} from 'react-router-dom'
+import axios from 'axios'
 
-const BestSelling = () => {
 
-    const history = useHistory();
-   
+const BestSelling = (props) => {
+    const [items,setItems] = React.useState(null)
 
-    const enterSinglePage = (itemData)=>{  
+useEffect(() => {
+    axios
+    .get("http://localhost:1337/categories")
+    .then(res=>{
+       let getCategoryData = res.data.find(el=>el.title=='best-selling')
+       setItems(getCategoryData.books);
+            
+      }
+      
+      )
+      .catch(err=>console.log(err))
+      console.log(items);
+}, [])
 
-        <ItemContentPage ali={itemData}/>   
-        console.log(itemData)
-        singlePageConcept(itemData)          
-    }
-    
-    const singlePageConcept =(itemData)=>{
-        history.push('/Bestselling/Itemcontentpage')
-        console.log(itemData);
-}
-
-  
     return (
         <>
             <Header/>
-            <h3 className='d-flex pt-4 pr-5'>پر فروش ترین ها</h3>
+            <h3 className='d-flex pt-4 pr-5' >پر فروش ترین ها</h3>
 
             <div className='main-product'>
                 <div className='row h-100 row-product'>
 
                   {
-                    BestSellingFakeData.map((item,index)=>{
+                   items && items.map((item,index)=>{
                         return(
                             <>
-                                <div onClick={()=>enterSinglePage(item)}>
+                                <div>
                                    <BestSellingItems
                                        key={index}
-                                       item={item}
+                                       item={item}  
                                    />
                                 </div>
                                     

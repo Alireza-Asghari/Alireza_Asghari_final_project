@@ -13,10 +13,11 @@ const MainProduct = () => {
               <div className='row h-100 row-product'>
 
                   {
-                    BestSellingFakeData.map(item=>{
+                    BestSellingFakeData.map((item,index)=>{
                       return(
                         <>
                              <BestSellingItems
+                              key={index}
                              item={item}
                              />
                         </>
