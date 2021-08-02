@@ -10,17 +10,16 @@ import {Navbar,Nav,Container} from 'react-bootstrap'
 const ItemContentPage = (props) => {
 
    const {id} = useParams()
-   const item = BestSellingFakeData.find(el=>el.id==id)
+   
    const [data,setData] = React.useState(null)
    
-
 
 useEffect(() => {
   axios
   .get("http://localhost:1337/categories")
   .then(res=>{
      let getCategory = res.data.find(el=>el.title=='best-selling')
-     setData(getCategory.books.find(el=>el.id==id))      
+     setData(getCategory.books.find(el=>el.id==id)) 
     }
     
     )

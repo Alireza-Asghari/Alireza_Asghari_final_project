@@ -1,26 +1,42 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import BestSellingItems from '../BestSelling/BestSelling.items'
 import NewTitleItems from '../NewTitle/NewTitle.items'
 import {BestSellingFakeData} from '../BestSelling/BestSellingFakeData'
-import  {NewTitleFakeData} from '../NewTitle/NewTitleFakeData.jsx'
+import axios from 'axios'
 
 const MainProduct = () => {
+
+  const [items,setItems] = React.useState(null)
+
+  useEffect(() => {
+      axios
+      .get("http://localhost:1337/categories")
+      .then(res=>{
+         let getCategoryData = res.data.find(el=>el.title=='best-selling')
+         setItems(getCategoryData.books);  
+        }
+        
+        )
+        .catch(err=>console.log(err))
+        console.log(items);
+  }, [])
+
     return (
         <>
-
-        
          <div className='main-product'>
               <div className='row h-100 row-product'>
 
-                  {
-                    BestSellingFakeData.map((item,index)=>{
-                      return(
-                        <>
-                             <BestSellingItems
-                              key={index}
-                             item={item}
-                             />
-                        </>
+              {
+                   items && items.map((item,index)=>{
+                        return(
+                            <>
+                                <div>
+                                   <BestSellingItems
+                                       key={index}
+                                       item={item}  
+                                   />
+                                </div>       
+                            </>
                      )
                     })
                   }

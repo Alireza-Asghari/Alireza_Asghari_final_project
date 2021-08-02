@@ -13,8 +13,7 @@ useEffect(() => {
     .get("http://localhost:1337/categories")
     .then(res=>{
        let getCategoryData = res.data.find(el=>el.title=='best-selling')
-       setItems(getCategoryData.books);
-            
+       setItems(getCategoryData.books);  
       }
       
       )
@@ -39,8 +38,7 @@ useEffect(() => {
                                        key={index}
                                        item={item}  
                                    />
-                                </div>
-                                    
+                                </div>       
                             </>
                      )
                     })
