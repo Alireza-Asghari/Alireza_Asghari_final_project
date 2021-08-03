@@ -17,8 +17,8 @@ const BestSellingItems = ({item}) => {
                         <span className='negative-s'>{item.title} </span>
                         <div className='d-flex justify-content-between w-100'>
 
-                            <span className='p-2 text-success'>{item.oldPrice} تومان</span>
-                            <span className='p-2 text-danger old-price'>{item.newPrice} تومان  </span>
+                            <span className='p-2 text-success'>{item.newPrice}  تومان</span>
+                            <span className='p-2 text-danger old-price'>{item.oldPrice}تومان  </span>
                         </div>
                     </div>
                 </div>
