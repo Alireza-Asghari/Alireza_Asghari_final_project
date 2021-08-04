@@ -31,7 +31,7 @@ const Criminal = () => {
                      items && items.map((item,index)=>{
                         return(
                             <>
-                                <div>
+                                <div key={index}>
                                    <CriminalItems
                                        key={index}
                                        item={item}

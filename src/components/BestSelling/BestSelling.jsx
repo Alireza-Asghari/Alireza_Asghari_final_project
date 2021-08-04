@@ -32,7 +32,7 @@ useEffect(() => {
                    items && items.map((item,index)=>{
                         return(
                             <>
-                                <div>
+                                <div key={index}>
                                    <BestSellingItems
                                        key={index}
                                        item={item}  
