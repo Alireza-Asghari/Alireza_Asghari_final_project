@@ -1,9 +1,9 @@
 import React,{useEffect} from 'react';
 import Header from '../HomePage.header/header';
 import {useParams} from 'react-router-dom'
-import {BestSellingFakeData} from './BestSellingFakeData'
+import {GiPieChart} from 'react-icons/gi'
 import axios from 'axios';
-import {Navbar,Nav,Container} from 'react-bootstrap'
+
 
 
 
@@ -63,8 +63,22 @@ useEffect(() => {
                     </div>
                 </div>
 
-
-
+               
+                  <div className='description row justify-content-start align-items-center '>
+                    <div className='d-flex des-box align-items-center'>
+                    <GiPieChart className='chart-icon'/>   
+                    <span className='description-text '> توضیحات</span>
+                    </div>
+              
+                    <p  lang="fa" className='para'>
+                        {
+                            data && `${data.description}`
+                        }
+                    </p>
+                    
+                  </div>
+                         
+              
             </div>
 
         </>

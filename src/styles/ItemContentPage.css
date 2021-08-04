@@ -10,6 +10,43 @@
     width: 330px;
 }
 .ww{
-    height: 70% !important;
-   
+    height: 78% !important;  
+}
+.description-text{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-right: 10px;  
+    color: #8f8b8b;  
+}
+.des-box{
+    padding-right: 12px;
+    background-color: #f5f2f2;
+    width: 100%;
+    height: 15%;
+}
+.description{
+    height: 58%;
+    width: 73vw;
+    margin: auto !important;
+}
+.para{
+    text-align: justify !important;
+}
+.chart-icon{
+    color: #8f8b8b;  
+}
+
+@media only screen and (max-width:575px){
+    .description{
+        position: absolute;
+        top: 167%;
+    }
+}
+
+@media only screen and (min-width:576px) and (max-width:612px){
+    .new-price, .old-price, .product-code, .book-name{
+        font-size: 14px;
+    }
 }
