@@ -1,9 +1,25 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {CriminalFakeData} from './criminalFakeData';
 import Header from '../HomePage.header/header';
 import CriminalItems from './Criminal.items';
+import axios from 'axios';
 
 const Criminal = () => {
+    const [items,setItems] = React.useState(null);
+
+    useEffect(() => {
+        axios
+        .get("http://localhost:1337/categories")
+        .then(res=>{
+           let getCategoryData = res.data.find(el=>el.title=='criminal')
+           setItems(getCategoryData.books);  
+          }
+          
+          )
+          .catch(err=>console.log(err))
+          console.log(items);
+    }, [])
+
     return (
         <>
             <Header/>
@@ -12,7 +28,7 @@ const Criminal = () => {
                 <div className='row h-100 row-product'>
 
                   {
-                    CriminalFakeData.map((item,index)=>{
+                     items && items.map((item,index)=>{
                         return(
                             <>
                                 <div>
