@@ -12,6 +12,7 @@ import CriminalSinglePage from '../components/criminal/CriminalSinglePage'
 import FictionSinglePage from '../components/fiction/FictionSinglePage'
 
 export const routes = [
+    
     { path: '/Home-page', exact: true, component: HomePage },
     { path: '/best-selling/:id', exact: true, component: ItemContentPage },
     { path: '/best-selling', exact: true, component: BestSelling },
