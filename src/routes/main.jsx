@@ -20,5 +20,4 @@ export const routes = [
     { path: '/horror', exact: true, component: Horror },
     { path: '/fiction', exact: true, component: Fiction },
     { path: '/login', exact: true, component: LoginPage },
-    
 ]
