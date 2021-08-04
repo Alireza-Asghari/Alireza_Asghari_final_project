@@ -52,10 +52,32 @@ const MainProduct = () => {
                  <span className='sen'>کتاب هایی که به تازگی به چاپ رسیده اند </span> 
                </div>
             </div>
+
+
+            <div className='main-product '>
+              <div className='row h-100 row-product '>
+
+              {
+                   alireza && alireza.map((item,index)=>{
+                        return(
+                            <>
+                                <div key={index}>
+                                   <NewTitleItems
+                                       key={index}
+                                       item={item}  
+                                   />
+                                </div>       
+                            </>
+                     )
+                    })
+                  }
           
-         
-          
-         
+                </div> 
+            </div>
+
+
+           
+        
         </>
     )
 }

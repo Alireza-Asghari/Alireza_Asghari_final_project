@@ -37,7 +37,7 @@
     }
     .aa{
         position: absolute;
-        top: 335%;
+        top: 380%;
     }
     .card-item1{
         position: absolute;
@@ -60,7 +60,8 @@
             height: 51%;
     }
     .main-product{
-        margin-top: 30px;
+        margin-top: 60px;
+        height: 275vh;
     }
  
 }
@@ -74,7 +75,7 @@
     }
     .yy{
         position: absolute;
-        top: 230%;
+        top: 243%;
        
         font-size: 14px;
     }
@@ -83,6 +84,7 @@
     }
     .main-product{
         margin-top: 12px;
+        height: 110vh;
     }
 }
 @media only screen and (min-width: 765px) and (max-width:900px){
@@ -94,7 +96,7 @@
     }
     .yy{
         position: absolute;
-        top: 215%;
+        top: 222%;
        
         font-size: 14px;
     }
@@ -103,6 +105,7 @@
     }
     .main-product{
         margin-top: 12px;
+        height: 110vh;
     }
 }
 
@@ -115,7 +118,7 @@
     }
     .yy{
         position: absolute;
-        top: 220%;
+        top: 227%;
        
         font-size: 14px;
     }
@@ -124,6 +127,7 @@
     }
     .main-product{
         margin-top: 12px;
+        height: 108vh;
     }
 }
 @media only screen and (min-width: 1021px) and (max-width:1200px){
@@ -135,7 +139,7 @@
     }
     .yy{
         position: absolute;
-        top: 215%;
+        top: 233%;
        
         font-size: 14px;
     }
@@ -147,10 +151,12 @@
     }
     .main-product{
         margin-top: 12px;
+        height: 110vh;
     }
 }
 
 @media only screen and (min-width: 1201px) and (max-width:1363px){
+    
     .kk{
         margin-top: 360px;
     }
@@ -159,7 +165,7 @@
     }
     .yy{
         position: absolute;
-        top: 225%;
+        top: 246%;
        
         font-size: 18px;
     }
@@ -174,6 +180,7 @@
     }
     .main-product{
         margin-top: 12px;
+        height: 110vh;
     }
 }
 
