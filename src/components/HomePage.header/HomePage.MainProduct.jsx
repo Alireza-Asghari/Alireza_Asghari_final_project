@@ -7,15 +7,15 @@ import axios from 'axios'
 const MainProduct = () => {
 
   const [items,setItems] = React.useState(null)
-  const [alireza,setAlireza] = React.useState(null)
+  const [newTitleData,setnewTitleData] = React.useState(null)
   useEffect(() => {
       axios
       .get("http://localhost:1337/categories")
       .then(res=>{
          let getCategoryData = res.data.find(el=>el.title=='best-selling')
-         let ali = res.data.find(el=>el.title=='new-titles')
+         let getNewTitleData = res.data.find(el=>el.title=='new-titles')
          setItems(getCategoryData.books);  
-         setAlireza(ali.books);  
+         setnewTitleData(getNewTitleData.books);  
         }
         
         )
@@ -58,7 +58,7 @@ const MainProduct = () => {
               <div className='row h-100 row-product '>
 
               {
-                   alireza && alireza.map((item,index)=>{
+                   newTitleData && newTitleData.map((item,index)=>{
                         return(
                             <>
                                 <div key={index}>
