@@ -18,7 +18,7 @@ useEffect(() => {
   axios
   .get("http://localhost:1337/categories")
   .then(res=>{
-     let getCategory = res.data.find(el=>el.title=='new-title')
+     let getCategory = res.data.find(el=>el.title=='new-titles')
      setData(getCategory.books.find(el=>el.id==id)) 
     }
     

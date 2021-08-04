@@ -20,7 +20,7 @@ const history = useHistory();
 
                  <Dropdown.Menu>
                      <Dropdown.Item  onClick={()=> history.push('/best-selling')} >پر فروش ترین ها</Dropdown.Item>
-                     <Dropdown.Item onClick={()=> history.push('/NewTitle')}>عناوین جدید</Dropdown.Item>
+                     <Dropdown.Item onClick={()=> history.push('/new-title')}>عناوین جدید</Dropdown.Item>
                      <Dropdown.Item onClick={()=> history.push('/criminal')}>جنایی</Dropdown.Item>
                      <Dropdown.Item onClick={()=> history.push('/horror')}>ترسناک</Dropdown.Item>
                      <Dropdown.Item onClick={()=> history.push('/fiction')}>تخیلی</Dropdown.Item>

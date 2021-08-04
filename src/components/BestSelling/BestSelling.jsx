@@ -34,7 +34,7 @@ useEffect(() => {
                             <>
                                 <div key={index}>
                                    <BestSellingItems
-                                       key={index}
+                                      
                                        item={item}  
                                    />
                                 </div>       

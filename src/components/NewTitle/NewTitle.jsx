@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Header from '../HomePage.header/header';
 import NewTitleItems from './NewTitle.items.jsx';
+import axios from 'axios'
 
 const NewTitle = () => {
 
@@ -10,7 +11,7 @@ const NewTitle = () => {
         axios
         .get("http://localhost:1337/categories")
         .then(res=>{
-           let getCategoryData = res.data.find(el=>el.title=='new-title')
+           let getCategoryData = res.data.find(el=>el.title=='new-titles')
            setItems(getCategoryData.books);  
           }
           

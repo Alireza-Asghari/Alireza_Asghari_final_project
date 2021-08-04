@@ -33,7 +33,7 @@ const Fiction = () => {
                             <>
                                 <div key={index}>
                                    <FictionItems
-                                       key={index}
+                                      
                                        item={item}
                                    />
                                 </div>

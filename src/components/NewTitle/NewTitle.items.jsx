@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const NewTitleItems = () => {
+const NewTitleItems = ({item}) => {
     return (
         <Link className='main-product' to={`/new-title/${item.id}`}>
            

@@ -33,7 +33,7 @@ const Horror = () => {
                             <>
                                 <div key={index}>
                                    <HorrorItems
-                                       key={index}
+                                       
                                        item={item}
                                    />
                                 </div>

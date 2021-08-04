@@ -7,12 +7,15 @@ import axios from 'axios'
 const MainProduct = () => {
 
   const [items,setItems] = React.useState(null)
+  const [alireza,setAlireza] = React.useState(null)
   useEffect(() => {
       axios
       .get("http://localhost:1337/categories")
       .then(res=>{
          let getCategoryData = res.data.find(el=>el.title=='best-selling')
+         let ali = res.data.find(el=>el.title=='new-titles')
          setItems(getCategoryData.books);  
+         setAlireza(ali.books);  
         }
         
         )
@@ -29,7 +32,7 @@ const MainProduct = () => {
                    items && items.map((item,index)=>{
                         return(
                             <>
-                                <div>
+                                <div key={index}>
                                    <BestSellingItems
                                        key={index}
                                        item={item}  
@@ -49,7 +52,9 @@ const MainProduct = () => {
                  <span className='sen'>کتاب هایی که به تازگی به چاپ رسیده اند </span> 
                </div>
             </div>
-          <NewTitleItems/>
+          
+         
+          
          
         </>
     )

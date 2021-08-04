@@ -9,7 +9,7 @@ import Carousel from 'react-bootstrap/Carousel'
    <Carousel.Item>
     <img
       className="d-block w-100"
-      src="		https://jangal.com/uploads/slideshow/banner-the-midnight-library.jpg
+      src="  https://jangal.com/uploads/slideshow/banner-the-midnight-library.jpg
       "
       alt="Third slide"
     />
