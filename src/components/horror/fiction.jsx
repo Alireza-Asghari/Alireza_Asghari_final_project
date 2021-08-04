@@ -1,10 +1,25 @@
-import React from 'react';
-import {HorrorFakeData} from './HorrorFakeData';
+import React,{useEffect} from 'react';
 import Header from '../HomePage.header/header';
-import HorrorItems from './HorrorItems';
+import FictionItems from './Fiction.items';
+import axios from 'axios';
 
 
 const Horror = () => {
+    const [items,setItems] = React.useState(null);
+
+    useEffect(() => {
+        axios
+        .get("http://localhost:1337/categories")
+        .then(res=>{
+           let getCategoryData = res.data.find(el=>el.title=='horror')
+           setItems(getCategoryData.books);  
+          }
+          
+          )
+          .catch(err=>console.log(err))
+         
+    }, [])
+
     return (
         <>
             <Header/>
@@ -13,11 +28,11 @@ const Horror = () => {
                 <div className='row h-100 row-product'>
 
                   {
-                    HorrorFakeData.map((item,index)=>{
+                     items && items.map((item,index)=>{
                         return(
                             <>
-                                <div>
-                                   <HorrorItems
+                                <div key={index}>
+                                   <FictionItems
                                        key={index}
                                        item={item}
                                    />
@@ -31,7 +46,7 @@ const Horror = () => {
                 </div> 
             </div>
         </>
-    )
+    )    
 }
 
 export default Horror;
