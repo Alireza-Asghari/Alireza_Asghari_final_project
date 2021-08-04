@@ -8,6 +8,7 @@ import ItemContentPage from '../components/BestSelling/itemContentPage'
 import LoginPage from '../pages/login'
 import Basket from '../pages/basket'
 import CriminalSinglePage from '../components/criminal/CriminalSinglePage'
+import FictionSinglePage from '../components/fiction/FictionSinglePage'
 
 export const routes = [
     { path: '/Home-page', exact: true, component: HomePage },
@@ -19,5 +20,6 @@ export const routes = [
     { path: '/criminal/:id', exact: true, component: CriminalSinglePage },
     { path: '/horror', exact: true, component: Horror },
     { path: '/fiction', exact: true, component: Fiction },
+    { path: '/fiction/:id', exact: true, component: FictionSinglePage },
     { path: '/login', exact: true, component: LoginPage },
 ]

@@ -17,7 +17,7 @@ const Criminal = () => {
           
           )
           .catch(err=>console.log(err))
-          console.log(items);
+          
     }, [])
 
     return (
