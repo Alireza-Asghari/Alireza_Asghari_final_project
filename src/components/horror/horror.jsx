@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import Header from '../HomePage.header/header';
-import FictionItems from './Fiction.items';
+import FictionItems from './Horror.items';
 import axios from 'axios';
 
 
