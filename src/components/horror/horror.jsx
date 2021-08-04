@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import Header from '../HomePage.header/header';
-import FictionItems from './Horror.items';
+import HorrorItems from './Horror.items'
 import axios from 'axios';
 
 
@@ -32,7 +32,7 @@ const Horror = () => {
                         return(
                             <>
                                 <div key={index}>
-                                   <FictionItems
+                                   <HorrorItems
                                        key={index}
                                        item={item}
                                    />

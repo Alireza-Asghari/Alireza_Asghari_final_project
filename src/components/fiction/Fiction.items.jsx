@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-const HorrorItems = ({item}) => {
+const FictionItems = ({item}) => {
     return (
-        <Link className='main-product' to={`/horror/${item.id}`}>
+        <Link className='main-product' to={`/fiction/${item.id}`}>
            
         <div className='row h-100 w-100 row-product'>
             <div className='card-item '>
@@ -25,4 +25,4 @@ const HorrorItems = ({item}) => {
     )
 }
 
-export default HorrorItems;
+export default FictionItems;
