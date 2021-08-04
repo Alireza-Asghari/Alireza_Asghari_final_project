@@ -1,9 +1,24 @@
 import React from 'react'
-import {NewTitleFakeData} from './NewTitleFakeData.jsx';
-import NewTitleCategory from './NewTitle.category';
 import Header from '../HomePage.header/header';
+import NewTitleItems from './NewTitle.items.jsx';
 
 const NewTitle = () => {
+
+    const [items,setItems] = React.useState(null);
+
+    useEffect(() => {
+        axios
+        .get("http://localhost:1337/categories")
+        .then(res=>{
+           let getCategoryData = res.data.find(el=>el.title=='new-title')
+           setItems(getCategoryData.books);  
+          }
+          
+          )
+          .catch(err=>console.log(err))
+         
+    }, [])
+
     return (
         <>
         <Header/>
@@ -12,11 +27,11 @@ const NewTitle = () => {
             <div className='row h-100 row-product'>
 
               {
-                NewTitleFakeData.map((item,index)=>{
+                items && items.map((item,index)=>{
                     return(
                         <>
-                            <div>
-                               <NewTitleCategory
+                            <div key={index}>
+                               <NewTitleItems
                                    key={index}
                                    item={item}
                                />
