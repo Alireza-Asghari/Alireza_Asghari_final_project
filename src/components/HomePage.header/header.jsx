@@ -61,7 +61,7 @@ const Header = () => {
           <div className='col-12 col-md-6 px-5 '>
             <div className=' py-4 d-flex justify-content-center justify-content-md-end '>
                <input className='search p-2 w-100' type='text' placeholder='عبارت مورد جستجو'></input> 
-               <button className='p-2'><BiSearch/></button>   
+               
             </div>  
           </div> 
 

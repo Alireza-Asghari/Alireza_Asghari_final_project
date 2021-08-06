@@ -27,4 +27,5 @@ body{
  @import './styles/HomePage.MainTitle.css';
  @import './styles//MainProduct.css';
  @import './styles/ItemContentPage.css';
- @import './styles/singlePage.style.css'
+ @import './styles/singlePage.style.css';
+ @import './styles/footer.css';
