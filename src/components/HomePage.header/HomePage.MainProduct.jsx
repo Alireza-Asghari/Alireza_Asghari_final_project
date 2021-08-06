@@ -1,7 +1,6 @@
 import React,{useEffect} from 'react'
 import BestSellingItems from '../BestSelling/BestSelling.items'
 import NewTitleItems from '../NewTitle/NewTitle.items'
-import {BestSellingFakeData} from '../BestSelling/BestSellingFakeData'
 import axios from 'axios'
 
 const MainProduct = () => {

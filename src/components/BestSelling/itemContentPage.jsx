@@ -1,8 +1,9 @@
 import React,{useEffect} from 'react';
 import Header from '../HomePage.header/header';
-import {useParams} from 'react-router-dom'
+import {useParams,useHistory} from 'react-router-dom'
 import {GiPieChart} from 'react-icons/gi'
 import axios from 'axios';
+import BuyBasket from '../BuyBasket/BuyBasket';
 
 
 
@@ -10,12 +11,12 @@ import axios from 'axios';
 const ItemContentPage = (props) => {
 
    const {id} = useParams()
-   
+   const history = useHistory()
    const [data,setData] = React.useState(null)
    
 
 useEffect(() => {
-  axios
+ axios
   .get("http://localhost:1337/categories")
   .then(res=>{
      let getCategory = res.data.find(el=>el.title=='best-selling')
@@ -57,7 +58,9 @@ useEffect(() => {
                             کد محصول : 159875498
                         </div>
                         <div>
-                            <button className='basket-but'>افزودن به سبد</button>
+                            <button className='basket-but' type='button' onClick={()=> history.push(`/best-selling/${data.id}/basket`)}> 
+                                سبد خرید
+                             </button>
                         </div>
                         
                     </div>

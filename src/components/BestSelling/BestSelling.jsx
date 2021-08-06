@@ -1,7 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import Header from '../HomePage.header/header'
 import BestSellingItems from './BestSelling.items'
-import {BestSellingFakeData} from './BestSellingFakeData'
 import axios from 'axios'
 
 

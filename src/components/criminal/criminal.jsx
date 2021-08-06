@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react';
-import {CriminalFakeData} from './criminalFakeData';
 import Header from '../HomePage.header/header';
 import CriminalItems from './Criminal.items';
 import axios from 'axios';
