@@ -17,8 +17,9 @@ export const routes = [
 
     { path: '/Home-page', exact: true, component: HomePage },
     { path: '/best-selling/:id', exact: true, component: ItemContentPage },
-    { path: '/best-selling/:id/basket', exact: true, component: BuyBasket },
+    { path: '/best-selling/:id/basket', exact: true, component: Basket },
     { path: '/best-selling', exact: true, component: BestSelling },
+    { path: '/login', exact: true, component: LoginPage },
     { path: '/login/:id', exact: true, component: Basket },
     { path: '/new-title', exact: true, component: NewTitle },
     { path: '/new-title/:id', exact: true, component: NewTitleSinglePage },
@@ -28,6 +29,5 @@ export const routes = [
     { path: '/horror/:id', exact: true, component: HorrorSinglePage },
     { path: '/fiction', exact: true, component: Fiction },
     { path: '/fiction/:id', exact: true, component: FictionSinglePage },
-    { path: '/login', exact: true, component: LoginPage },
     
 ]
