@@ -7,6 +7,7 @@ import {HiMinusSm} from 'react-icons/hi'
 import {FaTimes} from 'react-icons/fa'
 
 const Basket = () => {
+    const history = useHistory()
     const {id} = useParams();
     const [data,setData] = React.useState(null)
     const [loading,setLoading] = React.useState(false)
@@ -88,7 +89,7 @@ const Basket = () => {
                    <FaTimes size="25px" color="red"/>
                 </div>
            </div>
-           <button type="button" >
+           <button type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
                تکمیل خرید
            </button>
            
