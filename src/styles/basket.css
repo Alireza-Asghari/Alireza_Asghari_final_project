@@ -1,6 +1,6 @@
 .image-basket{
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
 }
 
 .price-basket-item{
@@ -25,5 +25,33 @@
     .taxt-basket-item{
         font-size: 11px;
           
+    }
+}
+.close-basket{
+    cursor: pointer;
+}
+ul{
+    border-bottom: 2px solid rgb(158, 157, 157);
+    
+    list-style-type: none
+}
+
+.header-top{
+    padding-top: 20px;
+    width: 91%;
+}
+
+@media only screen and (min-width: 720px){
+    .main{
+        width: 85% !important;
+        margin: auto !important;
+        border: 2px solid rgb(165, 163, 163);
+        border-radius: 6px;
+    }
+    
+}
+@media only screen and (max-width: 720px){
+    .header-top{
+        display: none;
     }
 }
