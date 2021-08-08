@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react';
-import { useParams } from 'react-router';
+import { useParams,useHistory } from 'react-router';
 import axios from 'axios'
 import { LoopCircleLoading } from 'react-loadingg';
 import {HiPlus} from 'react-icons/hi'
@@ -88,7 +88,9 @@ const Basket = () => {
                    <FaTimes size="25px" color="red"/>
                 </div>
            </div>
-           
+           <button type="button" >
+               تکمیل خرید
+           </button>
            
         </div>
         
