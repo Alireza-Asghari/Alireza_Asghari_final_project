@@ -1,0 +1,29 @@
+.image-basket{
+    width: 120px;
+    height: 120px;
+}
+
+.price-basket-item{
+    color: rgb(39, 224, 39);
+}
+.but-decrease{
+   background-color: red;
+   width: 32px;
+   height: 34px;
+}
+ .but-increase{
+    background-color:rgb(31, 175, 31);
+    width: 32px;
+    height: 34px;
+}
+@media only screen and (max-width: 500px){
+    .title-basket-item, .price-basket-item{
+        font-size: 14px;
+        font-weight: bold;   
+        
+    }
+    .taxt-basket-item{
+        font-size: 11px;
+          
+    }
+}
