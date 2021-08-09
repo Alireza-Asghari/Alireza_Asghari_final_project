@@ -1,28 +1,34 @@
 import {Modal} from 'react-bootstrap';
-import AddNewTask from './AddNewTask'
+import {Button} from 'react-bootstrap'
 
 function ViewModal(props) {
 
       return (
         <Modal
-  
         {...props}
-          size="xl"
-          contentClassName="modal"
-          dialogClassName="my-modal " 
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-        >
-        <Modal.Header closeButton className="modal-header">
-         <Modal.Title id="contained-modal-title-vcenter">
-          View Task
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="body-modal">
-          
+        <Modal.Body>
+          <h4>Centered Modal</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+            consectetur ac, vestibulum at eros.
+          </p>
         </Modal.Body>
-  
-        </Modal>
+        <Modal.Footer className='p-3'>
+          <div className='text-center'>
+          <Button className='text-center' onClick={props.onHide}>Close</Button>
+          </div>
+        </Modal.Footer>
+      </Modal>
       );
     }
     export default ViewModal;

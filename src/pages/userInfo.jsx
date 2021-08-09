@@ -2,9 +2,11 @@ import React from 'react'
 import {FaSignInAlt} from 'react-icons/fa'
 import {FaUserPlus} from 'react-icons/fa'
 import Header from '../components/HomePage.header/header'
+import ViewModal from './modal'
 
 
 const UserInfo = () => {
+    const [modalShow, setModalShow] = React.useState(false);
     return (
         <>
         <Header/>
@@ -45,7 +47,7 @@ const UserInfo = () => {
                                     برای تکمیل فرآیند خرید خود ثبت نام شوید.
                                 </div>
                                 <div className='p-3'>
-                                    <button className='p-2 px-5 btn btn-success entre-but w-75'>ثبت نام</button>
+                                    <button className='p-2 px-5 btn btn-success entre-but w-75' onClick={() => setModalShow(true)}>ثبت نام</button>
                                 </div>
 
                             </div>
@@ -54,6 +56,11 @@ const UserInfo = () => {
                 </div>
 
             </div>
+
+     <ViewModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
         </>
     )
 }
