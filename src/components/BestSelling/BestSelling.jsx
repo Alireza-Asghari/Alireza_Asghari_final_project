@@ -25,7 +25,7 @@ useEffect(() => {
             <h3 className='d-flex pt-4 pr-5' >پر فروش ترین ها</h3>
 
             <div className='main-product'>
-                <div className='row h-100 row-product'>
+                <div className='row h-25 row-product'>
 
                   {
                    items && items.map((item,index)=>{

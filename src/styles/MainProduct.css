@@ -15,7 +15,7 @@
     flex-direction: column;
 }
 .main-product{
-    height: 50vh;
+    height: 60vh;
 }
 .row-product{
     width: 79% !important;
@@ -31,12 +31,20 @@
 .old-price{
     text-decoration: line-through
 }
-@media only screen and (max-width: 690px){
+
+@media only screen and (min-width: 674px) and (max-width:688px){
+    .main-product{
+        margin-top: 60px;
+        height: 74vh;
+    }
+}
+
+@media only screen and (max-width: 673px){
     .card-item{
       margin-bottom: 35px;
     }
     .aa{
-        position: absolute;
+      /*  position: absolute;*/
         top: 380%;
     }
     .card-item1{
@@ -61,10 +69,13 @@
     }
     .main-product{
         margin-top: 60px;
-        height: 275vh;
+        height: 154vh;
     }
  
 }
+
+
+
 
 @media only screen and (min-width: 691px) and (max-width:765px){
     .kk{
@@ -74,7 +85,7 @@
         margin-top: 360px;
     }
     .yy{
-        position: absolute;
+      /*  position: absolute;*/
         top: 200%;
        
         font-size: 14px;
@@ -84,7 +95,7 @@
     }
     .main-product{
         margin-top: 12px;
-        height: 110vh;
+        height: 90vh;
     }
 }
 @media only screen and (min-width: 765px) and (max-width:900px){
@@ -95,7 +106,7 @@
         margin-top: 360px;
     }
     .yy{
-        position: absolute;
+       /* position: absolute;*/
         top: 222%;
        
         font-size: 14px;
@@ -105,7 +116,7 @@
     }
     .main-product{
         margin-top: 12px;
-        height: 110vh;
+        height: 90vh;
     }
 }
 
@@ -117,7 +128,7 @@
         margin-top: 360px;
     }
     .yy{
-        position: absolute;
+       /* position: absolute;*/
         top: 227%;
        
         font-size: 14px;
@@ -127,7 +138,7 @@
     }
     .main-product{
         margin-top: 12px;
-        height: 108vh;
+        height: 81vh;
     }
 }
 @media only screen and (min-width: 1021px) and (max-width:1200px){
@@ -138,7 +149,7 @@
         margin-top: 361px;
     }
     .yy{
-        position: absolute;
+      /*  position: absolute;*/
         top: 233%;
        
         font-size: 14px;
@@ -151,11 +162,11 @@
     }
     .main-product{
         margin-top: 12px;
-        height: 110vh;
+        height: 75vh;
     }
 }
 
-@media only screen and (min-width: 1201px) and (max-width:1363px){
+@media only screen and (min-width: 1201px) and (max-width:1347px){
     
     .kk{
         margin-top: 360px;
@@ -164,7 +175,7 @@
         margin-top: 360px;
     }
     .yy{
-        position: absolute;
+       /* position: absolute;*/
         top: 246%;
        
         font-size: 18px;
@@ -180,8 +191,16 @@
     }
     .main-product{
         margin-top: 12px;
-        height: 110vh;
+        height: 74vh;
     }
 }
 
+@media only screen and (min-width: 1347px){
+    .main-product{
+        margin-top: 12px;
+        height: 63vh;
 
+    }
+    
+
+}

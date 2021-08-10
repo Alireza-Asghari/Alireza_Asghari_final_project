@@ -24,7 +24,7 @@ const MainProduct = () => {
 
     return (
         <>
-         <div className='main-product'>
+         <div className='main-product main-product-selling'>
               <div className='row h-100 row-product'>
 
               {
@@ -54,7 +54,7 @@ const MainProduct = () => {
 
 
             <div className='main-product '>
-              <div className='row h-100 row-product '>
+              <div className='row h-75 row-product '>
 
               {
                    newTitleData && newTitleData.map((item,index)=>{
