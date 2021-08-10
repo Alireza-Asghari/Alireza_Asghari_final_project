@@ -1,5 +1,6 @@
+
 import React,{useEffect} from 'react';
-import { useParams,useHistory } from 'react-router';
+import {useParams,useHistory } from 'react-router';
 import axios from 'axios'
 import { LoopCircleLoading } from 'react-loadingg';
 import {HiPlus} from 'react-icons/hi'
@@ -10,15 +11,15 @@ const Basket = () => {
     const history = useHistory()
     const {id} = useParams();
     const [data,setData] = React.useState(null)
+    const [box,setBox] = React.useState([])
     const [loading,setLoading] = React.useState(false)
     const [inputValue, setInputValue] = React.useState(Number)
-    useEffect(() => {
+  useEffect(() => {
         setLoading(true)
         axios
          .get("http://localhost:1337/books")
-         .then(res=>{
-            
-            setData(res.data.find(el=>el.id==id)) 
+         .then(res=>{  
+           setData(res.data.find(el=>el.id==id))
             setLoading(false)
            }
            
@@ -26,6 +27,13 @@ const Basket = () => {
            .catch(err=>console.log(err))
            
        }, [])
+
+       useEffect(() => {
+           if(data !== null || data !==undefined)
+           setBox([...box,data
+
+        ])
+       }, [data])
 
  if(loading) return (<div><LoopCircleLoading size='large' speed='0.6'/></div>)
 
@@ -43,6 +51,13 @@ const Basket = () => {
             }
         } )
     }
+
+  const ali=()=>{
+      setBox([...box,{
+          title:'book',
+            name: 'reza',
+      }])
+  }
 
     return (
        <>
@@ -76,7 +91,7 @@ const Basket = () => {
                     <button type='button' className='but-decrease' onClick={Decreasement}>
                         <span><HiMinusSm color='white'/></span>
                     </button>
-                    <input value={inputValue}  type="text" maxlength="3" size="3" className='p-1 text-center'/>
+                    <input value={inputValue} readOnly type="text"  size="3" className='p-1 text-center'/>
                     <button type='button' className='but-increase' onClick={Increasement}>
                         <span><HiPlus color='white'/></span>
                     </button>
@@ -86,7 +101,7 @@ const Basket = () => {
                     <p className="reciept-basket-price m-md-0">{inputValue * (data && data.newPrice)}</p>
                 </div>
                 <div className="col-12 col-md-2 text-center close-basket" >
-                   <FaTimes size="25px" color="red"/>
+                   <FaTimes size="25px" color="red" onClick={ali}/>
                 </div>
            </div>
            <button type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>

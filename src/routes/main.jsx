@@ -11,7 +11,6 @@ import LoginPage from '../pages/login'
 import Basket from '../pages/basket'
 import CriminalSinglePage from '../components/criminal/CriminalSinglePage'
 import FictionSinglePage from '../components/fiction/FictionSinglePage'
-import BuyBasket from '../components/BuyBasket/BuyBasket'
 import UserInfo from '../pages/userInfo'
 
 export const routes = [

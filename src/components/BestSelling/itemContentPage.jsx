@@ -3,7 +3,7 @@ import Header from '../HomePage.header/header';
 import {useParams,useHistory} from 'react-router-dom'
 import {GiPieChart} from 'react-icons/gi'
 import axios from 'axios';
-import BuyBasket from '../BuyBasket/BuyBasket';
+import Basket from '../../pages/basket';
 
 
 
@@ -13,6 +13,7 @@ const ItemContentPage = (props) => {
    const {id} = useParams()
    const history = useHistory()
    const [data,setData] = React.useState(null)
+   const [items,setItems] = React.useState(null)
    
 
 useEffect(() => {
@@ -20,13 +21,23 @@ useEffect(() => {
   .get("http://localhost:1337/categories")
   .then(res=>{
      let getCategory = res.data.find(el=>el.title=='best-selling')
+     setItems(getCategory.books);
      setData(getCategory.books.find(el=>el.id==id)) 
+     
     }
     
     )
     .catch(err=>console.log(err))
     
 }, [])
+
+/*const handleBasketItems=()=>{
+    console.log(items);
+    console.log(data);
+    items.map((item,index)=> ( <Basket item={item}/>))
+  if(data !==null) return (<Basket info={data}/>)
+  
+}*/
 
     return (
         <>
