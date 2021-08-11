@@ -21,3 +21,11 @@ export const FetchReducer = (info=[],action)=>{
     }
 }
 
+export const logInReducer = (logIn=[],action)=>{
+    switch (action.type) {
+        case "LOG_IN_DATA":  
+            return action.payload
+        default:
+          return logIn;
+    }
+}

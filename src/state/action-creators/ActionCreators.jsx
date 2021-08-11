@@ -25,3 +25,12 @@ export const fetchData =(book)=>{
         })
     }
 }
+
+export const logInData =(user)=>{
+    return (dispatch) =>{
+        dispatch({
+            type: 'LOG_IN_DATA',
+            payload:user
+        })
+    }
+}
