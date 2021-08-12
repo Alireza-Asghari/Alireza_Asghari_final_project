@@ -10,7 +10,11 @@ const BasketComponent = ({data}) => {
     const history = useHistory()
     const {id} = useParams();
     const [inputValue, setInputValue] = React.useState(1);
-    
+    const dispatch = useDispatch()
+
+    const handleDelete=(data)=>{
+        dispatch({type:'delete', payload:data.id})
+    }
    
 
     const Increasement=()=>{
@@ -71,7 +75,7 @@ const BasketComponent = ({data}) => {
                     <p className="reciept-basket-price m-md-0">{inputValue * (data && data.newPrice)}</p>
                 </div>
                 <div className="col-12 col-md-2 text-center close-basket" >
-                   <FaTimes size="25px" color="red"/>
+                   <FaTimes size="25px" color="red" onClick={()=>handleDelete(data)}/>
                 </div>
            </div>
            <button className='ml-5 mt-2' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
