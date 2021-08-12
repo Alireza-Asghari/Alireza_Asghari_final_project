@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import BestSellingItems from '../BestSelling/BestSelling.items'
 import NewTitleItems from '../NewTitle/NewTitle.items'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const MainProduct = () => {
 
@@ -24,6 +25,7 @@ const MainProduct = () => {
 
     return (
         <>
+        
          <div className='main-product main-product-selling'>
               <div className='row h-100 row-product'>
 

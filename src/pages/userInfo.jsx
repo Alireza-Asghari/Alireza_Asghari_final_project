@@ -25,7 +25,7 @@ const UserInfo = () => {
                                     برای تکمیل فرآیند خرید خود وارد شوید.
                                 </div>
                                 <div className='p-3'>
-                                    <button className='p-2 px-5 btn btn-primary entre-but w-75'>ورود</button>
+                                    <button className='p-2 px-5 btn btn-primary entre-but w-75' onClick={() => setModalShow(true)}>ورود</button>
                                 </div>
 
                             </div>

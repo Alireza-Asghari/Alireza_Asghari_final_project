@@ -3,7 +3,8 @@ import Header from '../HomePage.header/header';
 import {useParams,useHistory} from 'react-router-dom'
 import {GiPieChart} from 'react-icons/gi'
 import axios from 'axios';
-import Basket from '../../pages/basket';
+import { useDispatch,useSelector } from 'react-redux';
+
 
 
 
@@ -14,6 +15,8 @@ const ItemContentPage = (props) => {
    const history = useHistory()
    const [data,setData] = React.useState(null)
    const [items,setItems] = React.useState(null)
+   const dispatch = useDispatch()
+   const cart = useSelector(state=>state.cart)
    
 
 useEffect(() => {
@@ -31,13 +34,10 @@ useEffect(() => {
     
 }, [])
 
-/*const handleBasketItems=()=>{
-    console.log(items);
-    console.log(data);
-    items.map((item,index)=> ( <Basket item={item}/>))
-  if(data !==null) return (<Basket info={data}/>)
-  
-}*/
+const handleAddBooks=(data)=>{
+    dispatch({type:"Add to cart",payload:data})
+    history.push(`/best-selling/${data.id}/basket`)
+}
 
     return (
         <>
@@ -69,7 +69,7 @@ useEffect(() => {
                             کد محصول : 159875498
                         </div>
                         <div>
-                            <button className='basket-but' type='button' onClick={()=> history.push(`/best-selling/${data.id}/basket`)}> 
+                            <button className='basket-but' type='button' onClick={()=>handleAddBooks(data)}> 
                                 سبد خرید
                              </button>
                         </div>

@@ -3,15 +3,14 @@ import {HiPlus} from 'react-icons/hi'
 import {HiMinusSm} from 'react-icons/hi'
 import {FaTimes} from 'react-icons/fa'
 import {useParams,useHistory } from 'react-router';
-import {useSelector, useDispatch} from 'react-redux'
-import {bindActionCreators} from 'redux'
-import { actionCreators } from '../state/action-creators/export.actions';
+import {useDispatch} from 'react-redux'
+
 
 const BasketComponent = ({data}) => {
     const history = useHistory()
     const {id} = useParams();
-    const [inputValue, setInputValue] = React.useState(Number);
-    const dispatch = useDispatch()
+    const [inputValue, setInputValue] = React.useState(1);
+    
    
 
     const Increasement=()=>{
@@ -31,7 +30,7 @@ const BasketComponent = ({data}) => {
 
     return (
        <>
-        { data.id == id &&
+        
             <>
             <div className='d-none  mx-auto header-top d-md-block justify-content-md-center align-items-md-center'>
             <ul className='row  p-3' >
@@ -75,13 +74,13 @@ const BasketComponent = ({data}) => {
                    <FaTimes size="25px" color="red"/>
                 </div>
            </div>
-           <button type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
+           <button className='ml-5 mt-2' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
                تکمیل خرید
            </button>
            
         </div>
         </>
-        }
+        
        </>
     )
 }

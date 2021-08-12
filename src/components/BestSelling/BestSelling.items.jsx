@@ -10,7 +10,7 @@ const BestSellingItems = ({item}) => {
             <div className='row h-100 w-100 row-product'>
                 <div className='card-item '>
                     <div className='positive'>
-                        <img className=' img-fluid' src={`http://localhost:1337${item.image.url}`}/>
+                        <img className=' img-fluid' src={`http://localhost:1337${item.image.url}`} alt='#'/>
                 
                     </div>
                     <div className='flex-column d-flex align-items-center p-2'>

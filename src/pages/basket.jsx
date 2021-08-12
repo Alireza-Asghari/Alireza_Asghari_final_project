@@ -1,22 +1,15 @@
 
 import React,{useEffect} from 'react';
 import {useParams,useHistory } from 'react-router';
-import { LoopCircleLoading } from 'react-loadingg';
-import {useSelector, useDispatch} from 'react-redux'
-import {bindActionCreators} from 'redux'
-import { actionCreators } from '../state/action-creators/export.actions';
-import axios from 'axios'
+import axios from 'axios';
 import BasketComponent from './basker.component';
+import { useSelector,useDispatch } from 'react-redux';
 
 const Basket = () => {
-    const history = useHistory()
-    const {id} = useParams();
-    const [data,setData] = React.useState(null)
     const [box,setBox] = React.useState([])
-    const [loading,setLoading] = React.useState(false)
+    const cart = useSelector(state=>state.cart)
     const dispatch = useDispatch()
-    const fetch = useSelector(state=>state.fetch);
-    const {fetchData} = bindActionCreators(actionCreators, dispatch);
+    const {id} = useParams()
 
   /*useEffect(() => {
         setLoading(true)
@@ -42,37 +35,35 @@ const Basket = () => {
  if(loading) return (<div><LoopCircleLoading size='large' speed='0.6'/></div>)
 */
 
-const fetchProducts =  () => {
+/*const fetchProducts =  () => {
   
     axios
    .get("http://localhost:1337/books")
    .then(res=>{
-     fetchData(res.data) 
+    
    }   
-     )    
+     )   
+     console.log(id);
+     
    };
 
  
  useEffect(() => {
    fetchProducts();
  }, []);
- 
+ */
 
     return (
-       <>
-
-            {
-                fetch.map(data=>{
-                 
-                    return(
-                      <BasketComponent data={data}/>
-                  )
-                   
-                }
-                    )
-            }
-        
-       </>
+      <>
+    {
+    cart.cart.map(el=>{
+      return(
+        <BasketComponent data={el}/>
+      )
+    })
+    }
+     
+      </>
     )
 }
 export default Basket;
