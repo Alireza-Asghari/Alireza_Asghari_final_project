@@ -45,8 +45,8 @@ const BasketComponent = ({data}) => {
             </ul>
         </div>
 
-        <div className='main-wrapper h-50 pt-5 pt-md-0'>
-           <div className='row flex-column flex-md-row con align-items-center main'>
+        <div className='main-wrapper pt-5 pt-md-0'>
+           <div className='row flex-column flex-md-row con align-items-center main-basket-box'>
                 <div className="w-100 col-12 col-md-4 ">
                     <div className='w-100  text-center'>
                         <img src={data && `http://localhost:1337${data.image.url}`} className='image-basket' alt="#"/>
@@ -77,11 +77,7 @@ const BasketComponent = ({data}) => {
                 <div className="col-12 col-md-2 text-center close-basket" >
                    <FaTimes size="25px" color="red" onClick={()=>handleDelete(data)}/>
                 </div>
-           </div>
-           <button className='ml-5 mt-2' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
-               تکمیل خرید
-           </button>
-           
+           </div>        
         </div>
         </>
         

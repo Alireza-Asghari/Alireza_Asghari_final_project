@@ -8,6 +8,7 @@ const Basket = () => {
     const [box,setBox] = React.useState([])
     const cart = useSelector(state=>state.cart)
     const dispatch = useDispatch()
+    const history = useHistory()
     const {id} = useParams()
 
     return (
@@ -19,6 +20,10 @@ const Basket = () => {
       )
     })
     }
+
+     <button className=' mt-2 btn btn-success mb-4' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
+               تکمیل خرید
+           </button>
       </>
     )
 }

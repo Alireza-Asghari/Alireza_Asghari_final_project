@@ -2,6 +2,11 @@
     width: 140px;
     height: 140px;
 }
+.btn{
+    margin-left: 86px !important;
+ /*   margin-top: 120px !important;*/
+}
+
 
 .price-basket-item{
     color: rgb(39, 224, 39);
@@ -41,12 +46,13 @@ ul{
     width: 91%;
 }
 
-@media only screen and (min-width: 720px){
-    .main{
+@media only screen and (min-width: 800px){
+    .main-basket-box{
         width: 85% !important;
         margin: auto !important;
         border: 2px solid rgb(165, 163, 163);
         border-radius: 6px;
+       /* height: 48% !important;*/
     }
     
 }
