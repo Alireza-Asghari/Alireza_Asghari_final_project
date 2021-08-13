@@ -24,8 +24,8 @@ const UserInfo = () => {
                                 <div className='p-3 text-confirmation'>
                                     برای تکمیل فرآیند خرید خود وارد شوید.
                                 </div>
-                                <div className='p-3'>
-                                    <button className='p-2 px-5 btn btn-primary entre-but w-75' onClick={() => setModalShow(true)}>ورود</button>
+                                <div className='p-3 text-center'>
+                                    <button className='p-2 px-2  btn-primary entre-but w-75' onClick={() => setModalShow(true)}>ورود</button>
                                 </div>
 
                             </div>
@@ -47,7 +47,7 @@ const UserInfo = () => {
                                     برای تکمیل فرآیند خرید خود ثبت نام شوید.
                                 </div>
                                 <div className='p-3'>
-                                    <button className='p-2 px-5 btn btn-success entre-but w-75' onClick={() => setModalShow(true)}>ثبت نام</button>
+                                    <button className='p-2 px-5  btn-success entre-but w-75' onClick={() => setModalShow(true)}>ثبت نام</button>
                                 </div>
 
                             </div>
