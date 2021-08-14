@@ -12,10 +12,12 @@ import Basket from '../pages/basket'
 import CriminalSinglePage from '../components/criminal/CriminalSinglePage'
 import FictionSinglePage from '../components/fiction/FictionSinglePage'
 import UserInfo from '../pages/userInfo'
+import PurchaseConf from '../pages/purchase.conf'
 
 export const routes = [
 
     { path: '/Home-page', exact: true, component: HomePage },
+    { path: '/purchase-confirm/:id', exact: true, component: PurchaseConf },
     { path: '/best-selling/:id', exact: true, component: ItemContentPage },
     { path: '/best-selling/:id/basket', exact: true, component: Basket },
     { path: '/best-selling/basket/user-info', exact: true, component: UserInfo },

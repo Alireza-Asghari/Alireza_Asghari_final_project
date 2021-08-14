@@ -2,11 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import {Modal} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
+import {useHistory} from 'react-router';
+
 
 function ViewModalLog(props) {
 const [userName, setUserName] = React.useState('')
 const [password, setPassword] = React.useState('')
 const [email, setEmail] = React.useState('')
+const history = useHistory()
 
   const handleUserNameValue=(e)=>{
     setUserName(e.target.value)
@@ -28,7 +31,8 @@ const handleLog=()=>{
     console.log('Well done!');
     console.log('User profile', response.data.user);
     console.log('User token', response.data.jwt);
-    alert('شما وارد حساب کاربری خود شدید')
+    alert('شما وارد حساب کاربری خود شدید');
+    history.push(`/purchase-confirm/${response.data.user.username}`)
   })
   .catch(error => {
     // Handle error.
