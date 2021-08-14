@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import axios from 'axios';
 import {Modal} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 import {useHistory} from 'react-router';
+import {useDispatch, useSelector} from 'react-redux'
 
 
 function ViewModalLog(props) {
@@ -10,6 +11,7 @@ const [userName, setUserName] = React.useState('')
 const [password, setPassword] = React.useState('')
 const [email, setEmail] = React.useState('')
 const history = useHistory()
+const dispatch = useDispatch()
 
   const handleUserNameValue=(e)=>{
     setUserName(e.target.value)
@@ -31,6 +33,10 @@ const handleLog=()=>{
     console.log('Well done!');
     console.log('User profile', response.data.user);
     console.log('User token', response.data.jwt);
+     
+    dispatch({type:'add user', payload:{username:response.data.user.username}})
+    
+    
     alert('شما وارد حساب کاربری خود شدید');
     history.push(`/purchase-confirm/${response.data.user.username}`)
   })
@@ -39,8 +45,8 @@ const handleLog=()=>{
     console.log('An error occurred:', error.response);
   });
   
-
 }
+
 
       return (
         <Modal
