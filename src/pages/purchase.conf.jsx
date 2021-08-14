@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/HomePage.header/header';
+import HeaderLog from './header.log';
 import { useParams } from 'react-router';
 import { useHistory } from 'react-router';
 
@@ -8,16 +8,10 @@ const PurchaseConf= () => {
     const history = useHistory()
     return (
         <>
-        <Header/>
+        <HeaderLog id={id}/>
+           
             <div>
-                this confirm
-            </div>
-            <div>
-                <button onClick={()=> history.push('/')}> 
-                    خروج از حساب کاربری
-                    <br/>
-                    {id}
-                </button>
+               
             </div>
         </>
     )

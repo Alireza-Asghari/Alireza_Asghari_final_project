@@ -5,6 +5,12 @@
     justify-content: space-between;
     align-items: center;
 }
+.but-exit{
+    background-color: #4e4e4e;
+   font-size: 13px;
+
+}
+
 .header-left{
     display: flex;
     justify-content: flex-start;
