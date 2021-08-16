@@ -1,13 +1,12 @@
 import React,{useEffect} from 'react';
 import Header from '../HomePage.header/header';
-import {useParams,useHistory} from 'react-router-dom'
+import {useParams,useHistory} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {GiPieChart} from 'react-icons/gi'
+import {GiPieChart} from 'react-icons/gi';
 import axios from 'axios';
 
 
 const HorrorSinglePage = (props) => {
-
    const {id} = useParams()
    const history = useHistory()
    const dispatch = useDispatch()
