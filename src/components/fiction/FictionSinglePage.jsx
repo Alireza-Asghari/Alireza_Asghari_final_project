@@ -1,16 +1,17 @@
 import React,{useEffect} from 'react';
 import Header from '../HomePage.header/header';
-import {useParams} from 'react-router-dom'
-import {GiPieChart} from 'react-icons/gi'
+import {useParams} from 'react-router-dom';
+import {GiPieChart} from 'react-icons/gi';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
 import axios from 'axios';
-
-
 
 
 const FictionSinglePage = (props) => {
 
    const {id} = useParams()
-   
+   const history = useHistory()
+   const dispatch = useDispatch()
    const [data,setData] = React.useState(null)
    
 
@@ -20,12 +21,15 @@ useEffect(() => {
   .then(res=>{
      let getCategory = res.data.find(el=>el.title=='fiction')
      setData(getCategory.books.find(el=>el.id==id)) 
-    }
-    
-    )
-    .catch(err=>console.log(err))
-    
+    }   
+)
+    .catch(err=>console.log(err))   
 }, [])
+
+const handleAddBooks=(data)=>{
+    dispatch({type:"Add to cart",payload:data})
+    history.push(`/best-selling/${data.id}/basket`)
+}
 
     return (
         <>
@@ -57,7 +61,7 @@ useEffect(() => {
                             کد محصول : 159875498
                         </div>
                         <div>
-                            <button className='basket-but'>افزودن به سبد</button>
+                            <button className='basket-but' onClick={()=>handleAddBooks(data)} >افزودن به سبد</button>
                         </div>
                         
                     </div>
