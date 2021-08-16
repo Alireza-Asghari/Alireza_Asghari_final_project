@@ -24,9 +24,11 @@ const Basket = () => {
     }
 
     
-     <button className='mt-2 btn btn-success mb-4' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
+    { cart.cart.length !==0 &&
+    
+    <button className='mt-2 btn btn-success mb-4' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
      تکمیل خرید
-     </button>
+     </button>}
     
       </>
     )
