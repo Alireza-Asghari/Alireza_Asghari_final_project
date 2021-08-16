@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import {Modal} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ViewModal(props) {
 const [userName, setUserName] = React.useState('')
@@ -28,20 +30,24 @@ const handleRegister=()=>{
   })
   .then(response => {
     // Handle success.
-    alert('ثبت نام با موفقیت انجام شد')
+  /*  alert('ثبت نام با موفقیت انجام شد')*/
+  toast.success("حساب کاربری شما با موفقیت ساخته شد");
     console.log('Well done!');
     console.log('User profile', response.data.user);
     console.log('User token', response.data.jwt);
   })
   .catch(error => {
     // Handle error.
-    alert('نام کاربری یا رمز عبور قبلا انتخاب شده است');
+    /*alert('نام کاربری یا رمز عبور قبلا انتخاب شده است');*/
+    toast.error("نام کاربری یا رمز عبور قبلا انتخاب شده است");
+    
   });
   
 
 }
 
       return (
+       <> 
         <Modal
         {...props}
         size="sm"
@@ -72,6 +78,18 @@ const handleRegister=()=>{
           </div>
         </Modal.Footer>
       </Modal>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+       />    
+      </>
       );
     }
     export default ViewModal;

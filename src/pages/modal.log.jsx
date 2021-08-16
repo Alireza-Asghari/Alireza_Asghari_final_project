@@ -6,12 +6,15 @@ import {useHistory} from 'react-router';
 import {useDispatch, useSelector} from 'react-redux'
 
 
+
 function ViewModalLog(props) {
 const [userName, setUserName] = React.useState('')
 const [password, setPassword] = React.useState('')
 const [email, setEmail] = React.useState('')
 const history = useHistory()
 const dispatch = useDispatch()
+
+
 
   const handleUserNameValue=(e)=>{
     setUserName(e.target.value)
@@ -20,35 +23,35 @@ const dispatch = useDispatch()
     setPassword(e.target.value)
   }
   
-
-const handleLog=()=>{
   
-  axios
-  .post('http://localhost:1337/auth/local', {
-    identifier: `${userName}`,
-    password: `${password}`,
-  })
-  .then(response => {
-    // Handle success.
-    console.log('Well done!');
-    console.log('User profile', response.data.user);
-    console.log('User token', response.data.jwt);
-     
-    dispatch({type:'add user', payload:{username:response.data.user.username}})
+  const handleLog=()=>{
+   
+    axios
+    .post('http://localhost:1337/auth/local', {
+      identifier: `${userName}`,
+      password: `${password}`,
+    })
+    .then(response => {
+      // Handle success.
+      console.log('Well done!');
+      console.log('User profile', response.data.user);
+      console.log('User token', response.data.jwt);
+      
+      history.push(`/purchase-confirm/${response.data.user.username}`)
+      dispatch({type:'add user', payload:{username:response.data.user.username}})
+      
+      
+      /*alert('شما وارد حساب کاربری خود شدید');*/
+      
+    })
+    .catch(error => {
+      // Handle error.
+      console.log('An error occurred:', error.response);
+    });
     
-    
-    alert('شما وارد حساب کاربری خود شدید');
-    history.push(`/purchase-confirm/${response.data.user.username}`)
-  })
-  .catch(error => {
-    // Handle error.
-    console.log('An error occurred:', error.response);
-  });
-  
 }
-
-
       return (
+       <> 
         <Modal
         {...props}
         size="sm"
@@ -77,6 +80,8 @@ const handleLog=()=>{
           </div>
         </Modal.Footer>
       </Modal>
+    
+      </> 
       );
     }
     export default ViewModalLog;

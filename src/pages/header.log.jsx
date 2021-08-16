@@ -7,7 +7,8 @@ import { useHistory } from 'react-router';
 import {FiShoppingCart} from 'react-icons/fi'
 import Category from '../components/category'
 import { useDispatch, useSelector } from 'react-redux';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HeaderLog = ({id}) => {
 const dispatch = useDispatch()
@@ -22,9 +23,8 @@ history.push('/')
 }
 
 useEffect(() => {
-   console.log(user);
-   
- }, [user])
+  toast.info(" شما با موفقیت وارد حساب کاربری شدید");
+ }, [])
 
     return (
     <>
@@ -71,7 +71,20 @@ useEffect(() => {
         </div>
         <hr />
 
-      <Category/>      
+      <Category/>  
+
+         <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        toastClassName="blue-toast"
+       />    
       </>
     )
 }
