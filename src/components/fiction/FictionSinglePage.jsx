@@ -5,7 +5,7 @@ import {GiPieChart} from 'react-icons/gi';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import axios from 'axios';
-
+import { LoopCircleLoading } from 'react-loadingg';
 
 const FictionSinglePage = (props) => {
 
@@ -13,14 +13,16 @@ const FictionSinglePage = (props) => {
    const history = useHistory()
    const dispatch = useDispatch()
    const [data,setData] = React.useState(null)
-   
+   const [loading,setLoading] = React.useState(true);
 
 useEffect(() => {
+    setLoading(true)
   axios
   .get("http://localhost:1337/categories")
   .then(res=>{
      let getCategory = res.data.find(el=>el.title=='fiction')
      setData(getCategory.books.find(el=>el.id==id)) 
+     setLoading(false)
     }   
 )
     .catch(err=>console.log(err))   
@@ -30,7 +32,7 @@ const handleAddBooks=(data)=>{
     dispatch({type:"Add to cart",payload:data})
     history.push(`/best-selling/${data.id}/basket`)
 }
-
+if (loading) return(<div><LoopCircleLoading/></div>)
     return (
         <>
             <Header />
