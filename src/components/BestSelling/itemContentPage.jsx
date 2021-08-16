@@ -70,7 +70,7 @@ const handleAddBooks=(data)=>{
                         </div>
                         <div>
                             <button className='basket-but' type='button' onClick={()=>handleAddBooks(data)}> 
-                                سبد خرید
+                                 افزودن به سبد خرید
                              </button>
                         </div>
                         
