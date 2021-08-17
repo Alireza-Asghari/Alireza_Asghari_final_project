@@ -18,5 +18,5 @@ const persistConfig = {
 
 const pReducer = persistReducer(persistConfig, RootReducer);
 
-export const store = createStore(pReducer);
+export const store = createStore(pReducer,enhancers);
 export const persistor = persistStore(store);
