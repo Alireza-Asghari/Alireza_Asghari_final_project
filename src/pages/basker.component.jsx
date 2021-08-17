@@ -11,7 +11,7 @@ const BasketComponent = ({data}) => {
     const {id} = useParams();
     const [inputValue, setInputValue] = React.useState(1);
     const dispatch = useDispatch()
-
+    let total=0;
     const handleDelete=(data)=>{
         dispatch({type:'delete', payload:data.id})
     }
@@ -72,7 +72,7 @@ const BasketComponent = ({data}) => {
                     
                 </div>
                 <div className="col-12 col-md-2 text-center">
-                    <p className="reciept-basket-price m-md-0">{inputValue * (data && data.newPrice)}</p>
+                    <p className="reciept-basket-price m-md-0">{ total =  inputValue * (data && data.newPrice)}</p>
                 </div>
                 <div className="col-12 col-md-2 text-center close-basket" >
                    <FaTimes size="25px" color="red" onClick={()=>handleDelete(data)}/>

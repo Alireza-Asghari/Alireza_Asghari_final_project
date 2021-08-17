@@ -45,6 +45,9 @@ ul{
     padding-top: 20px;
     width: 91%;
 }
+.total-price{
+    margin-left: 106px !important;
+}
 
 @media only screen and (min-width: 800px){
     .main-basket-box{
