@@ -5,14 +5,14 @@ import {FaTelegram} from 'react-icons/fa'
 import {FaTwitter} from 'react-icons/fa'
 import {Dropdown} from 'react-bootstrap'
 import {IoIosArrowDown} from 'react-icons/io'
-import {BiSearch} from 'react-icons/bi'
+import { useHistory } from 'react-router';
 import {FiShoppingCart} from 'react-icons/fi'
 
 import Category from '../category'
 
 
 const Header = () => {
-  
+  const history = useHistory()
     return (
     <>
         <div className='header '>
@@ -52,7 +52,7 @@ const Header = () => {
            <div className=' px-2 col-12 col-md-2'>
                 <div className='py-4  d-flex justify-content-center justify-content-md-center'>
                     <button className='btn btn-danger px-3'>
-                        <span className='ml-3'>سبد خرید</span>
+                        <span className='ml-3' onClick={() => history.push(`/best-selling/:id/basket`)}>سبد خرید</span>
                         <FiShoppingCart />
                     </button>
                 </div>

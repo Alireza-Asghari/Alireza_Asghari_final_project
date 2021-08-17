@@ -55,7 +55,7 @@ useEffect(() => {
            <div className=' px-2 col-12 col-md-2'>
                 <div className='py-4  d-flex justify-content-center justify-content-md-center'>
                     <button className='btn btn-danger px-3'>
-                        <span className='ml-3'>سبد خرید</span>
+                        <span className='ml-3 ' onClick={() => history.push(`/best-selling/:id/basket`)}>سبد خرید</span>
                         <FiShoppingCart />
                     </button>
                 </div>
