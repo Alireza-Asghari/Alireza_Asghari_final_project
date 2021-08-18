@@ -8,7 +8,11 @@ import 'react-toastify/dist/ReactToastify.css';
 function ViewModal(props) {
 const [userName, setUserName] = React.useState('')
 const [password, setPassword] = React.useState('')
-const [email, setEmail] = React.useState('')
+const [emailErr, setEmailErr] = React.useState(false);
+const [pwdError, setPwdError] = React.useState(false);
+const [email, setEmail] = React.useState('');
+
+
 
   const handleUserNameValue=(e)=>{
     setUserName(e.target.value)
@@ -20,10 +24,12 @@ const [email, setEmail] = React.useState('')
     setEmail(e.target.value)
   }
 
+
+
 const handleRegister=()=>{
-  console.log(email);
-  axios
-  .post('http://localhost:1337/auth/local/register', {
+
+    axios
+    .post('http://localhost:1337/auth/local/register', {
     email: `${email}`,
     username: `${userName}`,
     password: `${password}`,
@@ -42,8 +48,26 @@ const handleRegister=()=>{
     toast.error("نام کاربری یا رمز عبور قبلا انتخاب شده است");
     
   });
-  
+ 
+}
 
+const validEmail = new RegExp(
+  '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+);
+const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
+
+if (!validEmail.test(email)) {
+ setEmailErr(true);
+}
+else{
+ setEmailErr(false)
+}
+
+if (!validPassword.test(password)) {
+ setPwdError(true);
+}
+else{
+ setPwdError(false)
 }
 
       return (
@@ -66,9 +90,11 @@ const handleRegister=()=>{
 
           <div className='p-2'>
             <input className='p-2 rounded' placeholder='رمز عبور' onChange={handlePassword}/>
+            {pwdError && <small>Your password is invalid</small>}
           </div>
           <div className='p-2'>
             <input className='p-2 rounded' placeholder='ایمیل' onChange={handleEmail}/>
+            {emailErr && <small>Your email is invalid</small>}
           </div>
 
         </Modal.Body>

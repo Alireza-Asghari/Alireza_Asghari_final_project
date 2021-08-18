@@ -29,7 +29,15 @@ const Basket = () => {
     { cart.cart.length !==0 &&
     <>
     <div className='mt-5 mb-4 total-price'>
-      قیمت کل : 
+      <div className='pb-3'>
+          قیمت کل:
+      </div>
+       
+     {
+       cart.cart.reduce((accumulator, current) => {
+        return accumulator + (+current.newPrice * current.count);
+    }, 0)
+     } 
     </div>
     <button className='mt-2 btn btn-success mb-4' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
      تکمیل خرید

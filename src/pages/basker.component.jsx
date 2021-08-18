@@ -17,19 +17,21 @@ const BasketComponent = ({data}) => {
     }
    
 
-    const Increasement=()=>{
-        setInputValue(state => state +1)
+    const Increasement=(data)=>{
+        /*setInputValue(state => state +1)*/
+        dispatch({type:'inc', payload:data})
     }
-    const Decreasement=()=>{
+    const Decreasement=(data)=>{
         
-        setInputValue(state =>{
+      /*  setInputValue(state =>{
             if(state > 0){
               return  state -1
             }
             else{
                 return 0
             }
-        } )
+        } )*/
+        dispatch({type:'dec', payload:data})
     }
 
     return (
@@ -62,17 +64,17 @@ const BasketComponent = ({data}) => {
                     </div>
                 </div>
                 <div className='col-12 col-md-4 text-center pb-3'>
-                    <button type='button' className='but-decrease' onClick={Decreasement}>
+                    <button type='button' className='but-decrease' onClick={() => Decreasement(data)}>
                         <span><HiMinusSm color='white'/></span>
                     </button>
-                    <input value={inputValue} readOnly type="text"  size="3" className='p-1 text-center'/>
-                    <button type='button' className='but-increase' onClick={Increasement}>
+                    <input value={data.count} readOnly type="text"  size="3" className='p-1 text-center'/>
+                    <button type='button' className='but-increase' onClick={() => Increasement(data)}>
                         <span><HiPlus color='white'/></span>
                     </button>
                     
                 </div>
                 <div className="col-12 col-md-2 text-center">
-                    <p className="reciept-basket-price m-md-0">{ total =  inputValue * (data && data.newPrice)}</p>
+                    <p className="reciept-basket-price m-md-0">{ total =  data.count * (data && data.newPrice)}</p>
                 </div>
                 <div className="col-12 col-md-2 text-center close-basket" >
                    <FaTimes size="25px" color="red" onClick={()=>handleDelete(data)}/>

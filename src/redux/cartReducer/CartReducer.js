@@ -22,6 +22,30 @@ const CartReducer = (state = initialState, action) => {
         cart:state.cart.filter(item=>item.id!==action.payload)
       };
 
+    case 'inc':
+      action.payload.count +=1
+      return {
+      
+          ...state,
+          cart: state.cart,
+        
+      }  
+      case 'dec':
+        if(action.payload.count ==1){
+          return {
+            ...state,
+            cart:state.cart.filter(item=>item.id!==action.payload.id)
+          };
+        }
+        else{
+          let item = state.cart.find(el=>el.id ==action.payload.id)
+          item.count -=1
+          return {
+            ...state,
+            cart: state.cart,
+          };
+        }
+
       case "delete basket":
         return {
           
