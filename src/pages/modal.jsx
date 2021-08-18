@@ -5,23 +5,48 @@ import {Button} from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const validEmail = new RegExp(
+  '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
+);
+const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
+
+const validUserName = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
+
 function ViewModal(props) {
 const [userName, setUserName] = React.useState('')
 const [password, setPassword] = React.useState('')
 const [emailErr, setEmailErr] = React.useState(false);
+const [userNameErr, setUserNameErr] = React.useState(false);
 const [pwdError, setPwdError] = React.useState(false);
 const [email, setEmail] = React.useState('');
 
 
-
   const handleUserNameValue=(e)=>{
     setUserName(e.target.value)
+    if (!validPassword.test(userName)) {
+      setUserNameErr(true);
+    }
+     else{
+      setUserNameErr(false)
+     }
   }
   const handlePassword=(e)=>{
     setPassword(e.target.value)
+    if (!validPassword.test(password)) {
+      setPwdError(true);
+     }
+     else{
+      setPwdError(false)
+     }
   }
   const handleEmail=(e)=>{
     setEmail(e.target.value)
+    if (!validEmail.test(email)) {
+      setEmailErr(true);
+     }
+     else{
+      setEmailErr(false)
+     }
   }
 
 
@@ -51,25 +76,6 @@ const handleRegister=()=>{
  
 }
 
-const validEmail = new RegExp(
-  '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
-);
-const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
-
-if (!validEmail.test(email)) {
- setEmailErr(true);
-}
-else{
- setEmailErr(false)
-}
-
-if (!validPassword.test(password)) {
- setPwdError(true);
-}
-else{
- setPwdError(false)
-}
-
       return (
        <> 
         <Modal
@@ -84,17 +90,18 @@ else{
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className='p-2'>
+          <div className='p-2 d-flex flex-column align-items-center'>
             <input className='p-2 rounded ' placeholder='نام کاربری' onChange={handleUserNameValue}/>
+            {userNameErr && <small className='text-danger'>نام کاربری معتبر نیست</small>}
           </div>
 
-          <div className='p-2'>
-            <input className='p-2 rounded' placeholder='رمز عبور' onChange={handlePassword}/>
-            {pwdError && <small>Your password is invalid</small>}
+          <div className='p-2 d-flex flex-column align-items-center'>
+            <input className='p-2 rounded ' placeholder='رمز عبور' onChange={handlePassword}/>
+            {pwdError && <small className='text-danger'> رمز عبور معتبر نیست </small>}
           </div>
-          <div className='p-2'>
+          <div className='p-2 d-flex flex-column align-items-center'>
             <input className='p-2 rounded' placeholder='ایمیل' onChange={handleEmail}/>
-            {emailErr && <small>Your email is invalid</small>}
+            {emailErr && <small className='text-danger'> ایمیل معتبر نیست </small>}
           </div>
 
         </Modal.Body>

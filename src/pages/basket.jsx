@@ -23,9 +23,7 @@ const Basket = () => {
       )
     })
     }
-
-
-    
+  
     { cart.cart.length !==0 &&
     <>
     <div className='mt-5 mb-4 total-price'>
