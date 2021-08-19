@@ -1,11 +1,13 @@
 import React from 'react'
 import { Form } from 'react-bootstrap';
 import Row from "react-bootstrap/Row";
+import { useHistory } from 'react-router';
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from 'react-bootstrap';
 
 const FormContent = () => {
+    const history = useHistory()
     return (
         <div className='w-75 mx-auto mt-4'>
           <Form>
@@ -61,7 +63,7 @@ const FormContent = () => {
                 <div className='pr-3'>مرا به خاطر بسپار</div>    
             </Form.Group>
 
-            <Button variant="primary" type="button" >
+            <Button variant="primary" type="button" onClick={() => history.push('/purchase-confirm/:id/payement')}>
                 ورود به درگاه پرداخت
             </Button>
           </Form>
