@@ -3,6 +3,7 @@ import HeaderLog from './header.log';
 import { useParams } from 'react-router';
 import { useHistory } from 'react-router';
 import Basket from './basket';
+import FormContent from './form';
 
 const PurchaseConf= () => {
     const {id} = useParams()
@@ -10,7 +11,7 @@ const PurchaseConf= () => {
     return (
         <>
         <HeaderLog id={id}/>           
-        <Basket/>
+        <FormContent/>
         </>
     )
 }

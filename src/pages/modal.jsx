@@ -14,7 +14,7 @@ const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 const validUserName = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
 function ViewModal(props) {
-const [loading,setLoading] = React.useState(true)  
+  
 const [userName, setUserName] = React.useState('')
 const [password, setPassword] = React.useState('')
 const [emailErr, setEmailErr] = React.useState(false);
@@ -53,13 +53,34 @@ const [email, setEmail] = React.useState('');
 
 const handleRegister=()=>{
   
-  if(userName =='' || password =='' || email ==''){
+  if(userName =='' && password =='' && email ==''){
     setEmailErr(true)
     setPwdError(true)
     setUserNameErr(true) 
   }
-  else{
+  /*else if(userName==''){
+    setUserNameErr(true)  
     
+  }*/
+  /*else if(password==''){
+    setPwdError(true)
+  }
+  else if(email==''){
+    setEmailErr(true)
+  }*/
+  else if (userName=='' && password==''){
+    setPwdError(true)
+    setUserNameErr(true) 
+  }
+  else if (userName=='' && email==''){
+    setEmailErr(true)
+    setUserNameErr(true) 
+  }
+  else if (password=='' && email==''){
+    setPwdError(true)
+    setEmailErr(true) 
+  }
+   else{ 
     axios
     .post('http://localhost:1337/auth/local/register', {
     email: `${email}`,
@@ -81,7 +102,7 @@ const handleRegister=()=>{
     toast.error("نام کاربری یا رمز عبور قبلا انتخاب شده است");
     
   });
-}
+   }
 }
 
 

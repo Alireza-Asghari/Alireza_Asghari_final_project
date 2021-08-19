@@ -27,17 +27,21 @@ const Basket = () => {
     { cart.cart.length !==0 &&
     <>
     <div className='mt-5 mb-4 total-price'>
-      <div className='pb-3'>
-          قیمت کل:
+      <div className=''>
+          قیمت کل:(تومان)
+          <div className='p-2 mt-1'>
+                {
+                   cart.cart.reduce((accumulator, current) => {
+                  return accumulator + (+current.newPrice * current.count);
+                 }, 0)
+           } 
+          </div>
       </div>
        
-     {
-       cart.cart.reduce((accumulator, current) => {
-        return accumulator + (+current.newPrice * current.count);
-    }, 0)
-     } 
+   
+  
     </div>
-    <button className='mt-2 btn btn-success mb-4' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
+    <button className='btn btn-success mb-4' type="button" onClick={()=> history.push('/best-selling/basket/user-info')}>
      تکمیل خرید
      </button>
      </>

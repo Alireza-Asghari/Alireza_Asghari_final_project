@@ -13,7 +13,7 @@ const enhancers = compose(
 const persistConfig = {
  key: 'root',
  storage: storage,
- whitelist:['cart']
+ whitelist:['cart','user']
 };
 
 const pReducer = persistReducer(persistConfig, RootReducer);
