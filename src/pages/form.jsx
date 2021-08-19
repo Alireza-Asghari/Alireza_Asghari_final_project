@@ -62,10 +62,12 @@ const FormContent = () => {
                 <input type="checkbox"/>   
                 <div className='pr-3'>مرا به خاطر بسپار</div>    
             </Form.Group>
-
-            <Button variant="primary" type="button" onClick={() => history.push('/purchase-confirm/:id/payement')}>
+           <div className='pb-5'>
+          <button variant="primary" type="button" className='bg-primary p-2 text-white pl-3 pr-3' onClick={() => history.push('/purchase-confirm/:id/payement')}>
                 ورود به درگاه پرداخت
-            </Button>
+            </button>
+            </div>  
+           
           </Form>
         </div>      
 
