@@ -31,7 +31,7 @@ useEffect(() => {
         <div className='header '>
            <div className='row w-100' >
             <div className='header-left col-6 '>
-                     <span className="account-header text-white">{id}</span> 
+                     <span className="account-header text-white pr-3">{id}</span> 
                      <button className='text-white bg-dark p-2 but-exit' onClick={()=>handleDeleteLogIn(id)}>خروج از حساب کاربری</button>       
             </div>
            
