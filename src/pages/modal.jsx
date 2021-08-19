@@ -4,6 +4,7 @@ import {Modal} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { LoopCircleLoading } from 'react-loadingg';
 
 const validEmail = new RegExp(
   '^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$'
@@ -13,6 +14,7 @@ const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 const validUserName = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
 function ViewModal(props) {
+const [loading,setLoading] = React.useState(true)  
 const [userName, setUserName] = React.useState('')
 const [password, setPassword] = React.useState('')
 const [emailErr, setEmailErr] = React.useState(false);
@@ -49,10 +51,15 @@ const [email, setEmail] = React.useState('');
      }
   }
 
-
-
 const handleRegister=()=>{
-
+  
+  if(userName =='' || password =='' || email ==''){
+    setEmailErr(true)
+    setPwdError(true)
+    setUserNameErr(true) 
+  }
+  else{
+    
     axios
     .post('http://localhost:1337/auth/local/register', {
     email: `${email}`,
@@ -62,10 +69,11 @@ const handleRegister=()=>{
   .then(response => {
     // Handle success.
   /*  alert('ثبت نام با موفقیت انجام شد')*/
-  toast.success("حساب کاربری شما با موفقیت ساخته شد");
+    toast.success("حساب کاربری شما با موفقیت ساخته شد");
     console.log('Well done!');
-    console.log('User profile', response.data.user);
-    console.log('User token', response.data.jwt);
+   /* console.log('User profile', response.data.user);
+    console.log('User token', response.data.jwt);*/
+    
   })
   .catch(error => {
     // Handle error.
@@ -73,8 +81,9 @@ const handleRegister=()=>{
     toast.error("نام کاربری یا رمز عبور قبلا انتخاب شده است");
     
   });
- 
 }
+}
+
 
       return (
        <> 
