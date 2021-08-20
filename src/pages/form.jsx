@@ -12,34 +12,34 @@ const FormContent = () => {
         <div className='w-75 mx-auto mt-4'>
           <Form>
             <Form.Row>
-                <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>ایمیل</Form.Label>
+                <Form.Group className='text-right' as={Col} controlId="formGridEmail">
+                <Form.Label >ایمیل</Form.Label>
                 <Form.Control type="email" placeholder="ایمیل خود را وارد کنید " />
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Group className='text-right' as={Col} controlId="formGridPassword">
                 <Form.Label>رمز عبور</Form.Label>
                 <Form.Control type="password" placeholder="رمز عبور خود را وارد کنید" />
                 </Form.Group>
             </Form.Row>
 
-            <Form.Group controlId="formGridAddress1">
-                <Form.Label>آدرس</Form.Label>
+            <Form.Group className='text-right' controlId="formGridAddress1">
+                <Form.Label> آدرس اول</Form.Label>
                 <Form.Control placeholder="آدرس" />
             </Form.Group>
 
-            <Form.Group controlId="formGridAddress2">
-                <Form.Label> آدرس</Form.Label>
+            <Form.Group  className='text-right' controlId="formGridAddress2">
+                <Form.Label> آدرس دوم</Form.Label>
                 <Form.Control placeholder="آدرس" />
             </Form.Group>
 
             <Form.Row>
-                <Form.Group as={Col} controlId="formGridCity">
+                <Form.Group className='text-center' as={Col} controlId="formGridCity">
                 <Form.Label>شهر</Form.Label>
                 <Form.Control />
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridState">
+                <Form.Group className='text-center' as={Col} controlId="formGridState">
                     <Form.Label>استان</Form.Label>
                     <Form.Control as="select" defaultValue="Choose...">
                         <option>انتخاب...</option>
@@ -52,7 +52,7 @@ const FormContent = () => {
                     </Form.Control>
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridZip">
+                <Form.Group className='text-center' as={Col} controlId="formGridZip">
                 <Form.Label>کد پستی</Form.Label>
                 <Form.Control />
                 </Form.Group>
