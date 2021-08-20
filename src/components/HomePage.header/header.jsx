@@ -5,9 +5,8 @@ import {FaTelegram} from 'react-icons/fa'
 import {FaTwitter} from 'react-icons/fa'
 import {Dropdown} from 'react-bootstrap'
 import {IoIosArrowDown} from 'react-icons/io'
-import { useHistory } from 'react-router';
 import {FiShoppingCart} from 'react-icons/fi'
-
+import { useHistory } from 'react-router';
 import Category from '../category'
 
 
@@ -25,8 +24,8 @@ const Header = () => {
                 </Dropdown.Toggle>
 
                  <Dropdown.Menu>
-                     <Dropdown.Item href="#/action-1">ورود</Dropdown.Item>
-                     <Dropdown.Item href="#/action-2">ثبت نام</Dropdown.Item>
+                     <Dropdown.Item onClick={ ()=> history.push('/best-selling/basket/user-info')}>ورود</Dropdown.Item>
+                     <Dropdown.Item onClick={ ()=> history.push('/best-selling/basket/user-info')}>ثبت نام</Dropdown.Item>
                  </Dropdown.Menu>
             </Dropdown>
 
